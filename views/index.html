@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/stylesheets/cover.css" />
+
+</head>
+<body>
+
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">Cover</h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/newnote">New Note</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="inner cover">
+
+        <h1>Virtual Stand Up Meeting notes</h1>
+
+        <form action="/" method="post">
+          <div class="col-md-4">
+            <input id="memberName" name="memberName" class="form-control">
+          </div>
+          <div class="col-md-8">
+            <button id="btnFilterNotes" name="btnFilterNotes" class="btn btn-primary">Filter</button>
+          </div>
+        </form>
+
+        <br/>
+
+        <div class="col-md-12 column list-group">
+          {%for note in notes%}
+            <div class="list-group-item">
+              <div>Note from <em><strong>{{note.memberName}}</strong></em></div>
+              <div><strong>Work Yesterday:</strong> {{note.workYesterday}}</div>
+              <p><strong>Created on</strong>{{note.createdOn | date('m-d-y : H:i:s')}}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

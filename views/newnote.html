@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/cover.css" />
+
+</head>
+<body>
+
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Cover</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li ><a href="/">Home</a></li>
+                            <li class="active"><a href="#">New Note</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover">
+
+                {%if message.length > 0 %}
+                    <div class="alert alert-danger alert-error">
+                        {{message}}
+                    </div>
+                {% endif %}
+
+                <form class="form-horizontal" action="newnote" method="post">
+                    <div class="form-group">
+                        <label for="memberName" class="col-sm-3 control-label">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="memberName" name="memberName" placeholder="Member Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="project" class="col-sm-3 control-label">Project</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="project" name="project" placeholder="Project">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workYesterday" class="col-sm-3 control-label">Work Yesterday</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="workYesterday" name="workYesterday" placeholder="Work Yesterday">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workToday" class="col-sm-3 control-label">Work Today</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="workToday" name="workToday" placeholder="Work Today">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="impediment" class="col-sm-3 control-label">Impediment</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="impediment" name="impediment" placeholder="Impediment">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-9">
+                            <button type="submit" class="btn btn-default">Create</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
